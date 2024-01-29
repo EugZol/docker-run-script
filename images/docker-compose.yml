@@ -1,0 +1,26 @@
+services:
+  ffmpeg:
+    image: ffmpeg:local
+    build:
+      dockerfile: ffmpeg.dockerfile
+
+  ffprobe:
+    image: ffprobe:local
+    build:
+      dockerfile: ffprobe.dockerfile
+
+  pngcheck:
+    image: pngcheck:local
+    build:
+      dockerfile: pngcheck.dockerfile
+
+  scenedetect:
+    image: scenedetect:local
+    build:
+      dockerfile: scenedetect.dockerfile
+
+  youtube-dl:
+    platform: linux/x86_64
+    image: youtube-dl:local
+    build:
+      dockerfile: youtube-dl.dockerfile

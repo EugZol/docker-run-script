@@ -1,0 +1,2 @@
+FROM jrottenberg/ffmpeg
+ENTRYPOINT []

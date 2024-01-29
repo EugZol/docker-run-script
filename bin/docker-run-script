@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+# get image name and script name from arguments
+image=$1
+script=$2
+
+# shift arguments to remove the first two
+shift 2
+
+# get the absolute path of the current directory
+dir=$(realpath .)
+
+# run the docker container with the specified image and script, with a bind mount for the current directory
+docker run --rm -it \
+  -v $dir:/work \
+  -w /work \
+  $image \
+  $script "$@"

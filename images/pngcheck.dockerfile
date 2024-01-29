@@ -1,0 +1,2 @@
+FROM imagetools/pngcheck
+ENTRYPOINT []

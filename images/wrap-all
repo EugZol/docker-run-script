@@ -1,0 +1,13 @@
+#!/bin/zsh
+
+# loop over all *.dockerfile files in current directory
+for file in *.dockerfile; do
+  # get file name without extension
+  name=${file%.*}
+  # create or replace script in ~/bin
+  echo "Creating ~/bin/${name}-docker"
+  echo "#!/bin/zsh" > ~/bin/${name}-docker
+  echo "docker-run-script ${name}:local $name \$@" >> ~/bin/${name}-docker
+  # make script executable
+  chmod +x ~/bin/${name}-docker
+done
